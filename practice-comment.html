@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <article id="comment-containner">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dolorem. Ratione at, temporibus minus nam, error ab nulla earum mollitia molestiae ducimus incidunt nobis enim, doloribus blanditiis possimus deleniti libero?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dolorem. Ratione at, temporibus minus nam, error ab nulla earum mollitia molestiae ducimus incidunt nobis enim, doloribus blanditiis possimus deleniti libero?</p>
+        </article>
+        <textarea style="font-size: 25px; border: 2px solid gray;" name="" id="box" cols="60" rows="4"></textarea> <br>
+        <button style="width: 500px; padding: 10px;" id="btn">Submit</button>
+    </section>
+    
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            const comments = document.getElementById('box');
+            const newComment = document.createElement('p');
+            newComment.innerText = comments.value;
+            const appending = document.getElementById('comment-containner');
+            appending.appendChild(newComment);
+            //clear box
+            comments.value = '';
+        })
+    </script>
+</body>
+</html>

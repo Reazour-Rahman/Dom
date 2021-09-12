@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More</title>
+</head>
+<body>
+    <h1>More Events</h1>
+    <p id="top-secret">This is top secret</p>
+    <input type="text" name="" placeholder="Please! enter delete here" id="delete-confirm">
+    <button id="delete-btn" disabled>Delete</button>
+
+    <script>
+        //delete message 
+        document.getElementById('delete-btn').addEventListener('click',
+         function () {
+            document.getElementById('top-secret').style.display = 'none';
+        })
+        //focus
+        document.getElementById('delete-confirm').addEventListener('focus',
+         function () {
+            document.body.style.backgroundColor ='Red'
+            document.body.style.color ='white'
+        })
+        //blur
+        document.getElementById('delete-confirm').addEventListener('blur',
+         function () {
+            document.body.style.backgroundColor ='white'
+            document.body.style.color ='black'
+        })
+        //keyup
+        document.getElementById('delete-confirm').addEventListener('keyup',
+         function () {
+            const deleteField = document.getElementById('delete-confirm');
+            console.log(deleteField.value);
+            if (deleteField.value == 'delete') {
+                console.log(document.getElementById('delete-btn').removeAttribute('disabled'))
+            }
+        })
+        //change
+        document.getElementById('delete-confirm').addEventListener('change',
+         function () {
+            const deleteField = document.getElementById('delete-confirm');
+            console.log(deleteField.value);
+        })
+    </script>
+</body>
+</html>
